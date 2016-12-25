@@ -29,7 +29,7 @@ import org.apache.kylin.metadata.datatype.DataTypeSerializer;
  */
 public class BitmapSerializer extends DataTypeSerializer<BitmapCounter> {
 
-    private ThreadLocal<BitmapCounter> current = new ThreadLocal<>();
+    private transient ThreadLocal<BitmapCounter> current = new ThreadLocal<>();
 
     public BitmapSerializer(DataType type) {
     }
